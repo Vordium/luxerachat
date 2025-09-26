@@ -134,13 +134,15 @@ export default function LoginPage() {
             <p className="text-sm text-center text-card-foreground">
               Welcome back! Please enter your details.
             </p>
-            <form onSubmit={handleSubmit} className="space-y-4">
+            <form onSubmit={handleSubmit} autoComplete="on" className="space-y-4">
               <div>
                 <label className="block text-sm font-medium mb-1 text-card-foreground">
                   Email
                 </label>
                 <Input
                   type="email"
+                  name="email"
+                  autoComplete="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   onKeyDown={(e) => {
@@ -159,6 +161,8 @@ export default function LoginPage() {
                 <div className="relative">
                   <Input
                     type={showPassword ? "text" : "password"}
+                    name="password"
+                    autoComplete="current-password"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     onKeyDown={(e) => {
