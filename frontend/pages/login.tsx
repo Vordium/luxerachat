@@ -136,11 +136,15 @@ export default function LoginPage() {
             </p>
             <form onSubmit={handleSubmit} autoComplete="on" className="space-y-4">
               <div>
-                <label className="block text-sm font-medium mb-1 text-card-foreground">
+                <label
+                  htmlFor="email"
+                  className="block text-sm font-medium mb-1 text-card-foreground"
+                >
                   Email
                 </label>
                 <Input
                   type="email"
+                  id="email"
                   name="email"
                   autoComplete="email"
                   value={email}
@@ -155,12 +159,16 @@ export default function LoginPage() {
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium mb-1 text-card-foreground">
+                <label
+                  htmlFor="password"
+                  className="block text-sm font-medium mb-1 text-card-foreground"
+                >
                   Password
                 </label>
                 <div className="relative">
                   <Input
                     type={showPassword ? "text" : "password"}
+                    id="password"
                     name="password"
                     autoComplete="current-password"
                     value={password}
